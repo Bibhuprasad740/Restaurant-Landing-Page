@@ -7,8 +7,10 @@ import HeaderCartButton from "./HeaderCartButton";
 const Header = (props) => {
   return (
     <Fragment>
-      <header className={classes.header}>Sahoo Family Restaurant</header>
-      <HeaderCartButton />
+      <header className={classes.header}>
+        <h1>Sahoo Family Restaurant</h1>
+        <HeaderCartButton />
+      </header>
       <div className={classes["main-image"]}>
         <img src={mealsImage} alt="Table of food!" />
       </div>
