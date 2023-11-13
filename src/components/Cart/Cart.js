@@ -50,13 +50,6 @@ const Cart = (props) => {
     setIsLoading(false);
   };
 
-  const emptyCartParagraph = (
-    <div className={classes.control}>
-      <p>Your Cart is empty!!</p>
-      <button onClick={props.onClose}>Close</button>
-    </div>
-  );
-
   const cartItems = (
     <ul className={classes["cart-items"]}>
       {cartContext.items.map((item) => (
@@ -103,6 +96,15 @@ const Cart = (props) => {
     modalContent = <p>Loading...</p>;
   }
 
+  if (cartContext.items.length === 0) {
+    modalContent = (
+      <div className={classes.control}>
+        <p>Your Cart is empty!!</p>
+        <button onClick={props.onClose}>Close</button>
+      </div>
+    );
+  }
+
   if (submitWasSuccess) {
     modalContent = (
       <div className={classes.control}>
@@ -114,11 +116,7 @@ const Cart = (props) => {
     cartContext.clearCart();
   }
 
-  return (
-    <Modal onClose={props.onClose}>
-      {cartContext.items.length === 0 ? emptyCartParagraph : modalContent}
-    </Modal>
-  );
+  return <Modal onClose={props.onClose}>{modalContent}</Modal>;
 };
 
 export default Cart;
