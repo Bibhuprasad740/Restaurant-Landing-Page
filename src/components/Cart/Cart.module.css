@@ -44,3 +44,21 @@
   background-color: #8a2b06;
   color: white;
 }
+
+.control {
+  text-align: center;
+}
+
+.control p {
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(162, 162, 162);
+}
+
+.control button {
+  padding: 0.5rem 2rem;
+  border-radius: 25px;
+  border: 2px solid #019217;
+  background-color: #08b723;
+  color: white;
+}
